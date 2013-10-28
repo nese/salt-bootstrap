@@ -1,9 +1,9 @@
 #!/bin/sh
-echo "$1" > /etc/hostname
+echo "$1-$2-$3" > /etc/hostname
 hostname -F /etc/hostname
 cat >/etc/hosts<<EOF
 127.0.0.1 localhost
-127.0.1.1 $1
+127.0.1.1 $1-$2-$3
 212.71.250.182 salt
 
 # The following lines are desirable for IPv6 capable hosts
@@ -16,8 +16,9 @@ EOF
 
 mkdir /etc/salt
 cat >/etc/salt/grains<<EOF
+role: $1
 environment: $2
-role: $3
+instance: $3
 EOF
 
 curl -L http://bootstrap.saltstack.org | sudo sh
