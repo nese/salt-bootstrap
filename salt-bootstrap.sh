@@ -13,4 +13,11 @@ ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 EOF
+
+mkdir /etc/salt
+cat >/etc/salt/grains<<EOF
+environment: $2
+role: $3
+EOF
+
 curl -L http://bootstrap.saltstack.org | sudo sh
