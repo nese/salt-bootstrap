@@ -4,7 +4,7 @@ hostname -F /etc/hostname
 cat >/etc/hosts<<EOF
 127.0.0.1 localhost
 127.0.1.1 $1-$2-$3
-212.71.250.182 salt
+$4 salt
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     ip6-localhost ip6-loopback
