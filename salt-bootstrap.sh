@@ -21,4 +21,4 @@ environment: $2
 instance: $3
 EOF
 
-curl -L http://bootstrap.saltstack.org | sudo sh
+curl -L http://bootstrap.saltstack.org | sudo sh -s -- git v0.17.5
